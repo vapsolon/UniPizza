@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<p>Updating item #{{item.id}}, {{item.name}}</p>
+<p>Ingredients: {{item.ingredients}}</p>
+<p>Price: {{item.price}}</p>
+<form method="POST" action="{{url_for('menu_update', item_id=item.id)}}">
+    <label for="name">Name</label>
+    <input type="text" name="name"/><br>
+    <label for="ingredients">Ingredients</label>
+    <input type="text" name="ingredients"/><br>
+    <label for="price">Price</label>
+    <input type="text" name="price"/><br>
+    <input type="submit" value="Update Menu Item"/>
+</form>
+{% endblock %}

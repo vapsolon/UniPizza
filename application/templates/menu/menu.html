@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Ingredients</th>
+            <th>Price</th>
+        </tr>
+        {% for item in menu %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.ingredients }}</td>
+            <td>{{ item.price }}</td>
+            <td>
+                <a href="{{url_for('menu_update', item_id=item.id)}}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

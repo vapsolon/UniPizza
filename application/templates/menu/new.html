@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="POST" action="{{ url_for('menu_add') }}">
+    <label for="name">Name</label>
+    <input type="text" name="name"/><br>
+    <label for="ingredients">Ingredients</label>
+    <input type="text" name="ingredients"/><br>
+    <label for="price">Price</label>
+    <input type="text" name="price"/><br>
+    <input type="submit" value="Add a new menu item"/>
+</form>
+{% endblock %}

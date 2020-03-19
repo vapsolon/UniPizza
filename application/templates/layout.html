@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Demo</title>
+    </head>
+
+    <body>
+        <a href="{{url_for('menu_index')}}">Menu</a>
+        <a href="{{url_for('menu_form')}}">Add a menu item</a>
+        {% block body %}
+        
+        {% endblock %}
+    </body>
+</html>
