@@ -11,4 +11,8 @@ Admin-puolella ainakin täytteiden ja tuotteiden poistaminen ja lisääminen tul
 
 ## Resurssit
 
+[Heroku](https://unipizza.herokuapp.com/)
+
 [Tietokantakaavio](https://vapsolon.github.io/UniPizza/docut/Tietokantakaavio.png)
+
+[Käyttötapaukset](https://vapsolon.github.io/UniPizza/docut/Käyttötapaukset.md)
