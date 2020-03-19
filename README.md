@@ -15,4 +15,4 @@ Admin-puolella ainakin täytteiden ja tuotteiden poistaminen ja lisääminen tul
 
 [Tietokantakaavio](https://vapsolon.github.io/UniPizza/docut/Tietokantakaavio.png)
 
-[Käyttötapaukset](https://vapsolon.github.io/UniPizza/docut/Käyttötapaukset.md)
+[Käyttötapaukset](https://vapsolon.github.io/UniPizza/blob/master/docut/Käyttötapaukset.md)
