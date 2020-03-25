@@ -1,6 +1,7 @@
 from application import app, db
 from flask import render_template, request, redirect, url_for
 from application.menu.models import Product
+from application.menu.forms import ProductForm
 
 @app.route("/", methods=["GET"])
 def redirect_root():
@@ -12,14 +13,19 @@ def menu_index():
 
 @app.route("/menu/new")
 def menu_form():
-    return render_template("menu/new.html")
+    return render_template("menu/new.html", form=ProductForm())
 
 @app.route("/menu/", methods=["POST"])
 def menu_add():
+    form = ProductForm(request.form)
+    
+    if not form.validate():
+        return render_template("menu/new.html", form=form)
+    
     p = Product(
-        request.form.get("name"),
-        request.form.get("ingredients"),
-        float(request.form.get("price"))
+        form.name.data,
+        form.ingredients.data,
+        float(form.price.data)
     )
 
     db.session().add(p)

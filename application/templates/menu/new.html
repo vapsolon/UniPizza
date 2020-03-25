@@ -2,12 +2,24 @@
   
 {% block body %}
 <form method="POST" action="{{ url_for('menu_add') }}">
-    <label for="name">Name</label>
-    <input type="text" name="name"/><br>
-    <label for="ingredients">Ingredients</label>
-    <input type="text" name="ingredients"/><br>
-    <label for="price">Price</label>
-    <input type="text" name="price"/><br>
+    {{form.name.label}}
+    {{form.name}}
+    {% for error in form.name.errors %}
+	    {{error}}
+	{% endfor %}
+    <br>
+    {{form.ingredients.label}}
+    {{form.ingredients}}
+    {% for error in form.ingredients.errors %}
+	    {{error}}
+	{% endfor %}
+    <br>
+    {{form.price.label}}
+    {{form.price}}
+    {% for error in form.price.errors %}
+	    {{error}}
+	{% endfor %}
+    <br>
     <input type="submit" value="Add a new menu item"/>
 </form>
 {% endblock %}
