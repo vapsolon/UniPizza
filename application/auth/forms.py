@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, validators
+from wtforms import PasswordField, StringField, BooleanField, validators
   
 class LoginForm(FlaskForm):
     email = StringField("Email", [validators.InputRequired()])
@@ -14,6 +14,7 @@ class CreateForm(FlaskForm):
     password = PasswordField("Password", [validators.InputRequired()])
     address = StringField("Address", [validators.InputRequired()])
     phone = StringField("Phone", [validators.InputRequired()])
+    admin = BooleanField("Admin")
   
     class Meta:
         csrf = False

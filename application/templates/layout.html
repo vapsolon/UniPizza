@@ -7,13 +7,15 @@
 
     <body>
         {% if current_user.is_authenticated %}
-            <p>Kirjautunut nimellä {{ current_user.name }} <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a></p>
+            <p>Logged in as <b>{{ current_user.name }}</b> <a href="{{ url_for('auth_logout') }}">Log Out</a></p>
         {% else %}
-            <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+            <p><a href="{{ url_for('auth_login') }}">Log In</a> <a href="{{ url_for('account_create') }}">Create an Account</a></p>
         {% endif %}
-        
         <a href="{{url_for('menu_index')}}">Menu</a>
-        <a href="{{url_for('menu_form')}}">Add a menu item</a>
+        {% if current_user.admin %}
+            <a href="{{url_for('menu_form')}}">Add a menu item</a>
+            <a href="{{url_for('account_create')}}">Create an Account</a>
+        {% endif %}
         {% block body %}
         
         {% endblock %}

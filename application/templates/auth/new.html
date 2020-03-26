@@ -17,6 +17,11 @@
     {{form.phone.label}}
     {{form.phone}}
     <br>
+    {% if admin %}
+        {{form.admin.label}}
+        {{form.admin}}
+        <br>
+    {% endif %}
     <input type="submit" value="Create a new account"/>
 </form>
 {% endblock %}

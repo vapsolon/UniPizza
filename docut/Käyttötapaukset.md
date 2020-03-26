@@ -10,3 +10,8 @@ Tällä hetkellä UniPizzan kautta on mahdollista tarkastella julkista menua ja 
 * Tilaustoiminnallisuus
 * Useampaan eri osaan pilkottu menu, esim. pizzat - salaatit - juomat
 * Täytteiden erottaminen omiksi olioikseen jotta pitsaan voi lisätä täytteet listalta kirjoittamisen sijasta
+
+## User Storyt
+
+* Käyttäjänä haluan tilata pitsan kotiin helposti netistä
+* Käyttäjänä haluan voida tukea vakiopaikkaani kanta-asiakkaana ja saada tätä kautta myös pieniä etuja itselleni
