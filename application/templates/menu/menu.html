@@ -1,24 +1,26 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <table>
-        <tr>
-            <th>Item</th>
-            <th>Ingredients</th>
-            <th>Price</th>
-        </tr>
-        {% for item in menu %}
-        <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.ingredients }}</td>
-            <td>{{ item.price }}</td>
-            {% if current_user.admin %}
-                <td>
-                    <a href="{{url_for('menu_update', item_id=item.id)}}">Edit</a>
-                    <a href="{{url_for('menu_delete', item_id=item.id)}}">Remove</a>
-                </td>
-            {% endif %}
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="menu">
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Ingredients</th>
+                <th>Price</th>
+            </tr>
+            {% for item in menu %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.ingredients }}</td>
+                <td>{{ item.price }}</td>
+                {% if current_user.admin %}
+                    <td>
+                        <a href="{{url_for('menu_update', item_id=item.id)}}">Edit</a>
+                        <a href="{{url_for('menu_delete', item_id=item.id)}}">Remove</a>
+                    </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}

@@ -3,19 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title>UniPizza</title>
+        <!--<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='styles/layout.css')}}">-->
     </head>
 
     <body>
-        {% if current_user.is_authenticated %}
-            <p>Logged in as <b>{{ current_user.name }}</b> <a href="{{ url_for('auth_logout') }}">Log Out</a></p>
-        {% else %}
-            <p><a href="{{ url_for('auth_login') }}">Log In</a> <a href="{{ url_for('account_create') }}">Create an Account</a></p>
-        {% endif %}
-        <a href="{{url_for('menu_index')}}">Menu</a>
-        {% if current_user.admin %}
-            <a href="{{url_for('menu_form')}}">Add a menu item</a>
-            <a href="{{url_for('account_create')}}">Create an Account</a>
-        {% endif %}
+        <div class="header">
+            {% if current_user.is_authenticated %}
+                <p>Logged in as <b>{{ current_user.name }}</b> <a href="{{ url_for('auth_logout') }}">Log Out</a></p>
+            {% else %}
+                <p><a href="{{ url_for('auth_login') }}">Log In</a> <a href="{{ url_for('account_create') }}">Create an Account</a></p>
+            {% endif %}
+            <a href="{{url_for('menu_index')}}">Menu</a>
+            {% if current_user.admin %}
+                <a href="{{url_for('menu_form')}}">Add a menu item</a>
+                <a href="{{url_for('account_create')}}">Create an Account</a>
+            {% endif %}
+        </div>
         {% block body %}
         
         {% endblock %}
