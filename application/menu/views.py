@@ -42,7 +42,7 @@ def menu_add():
 def menu_update_form(item_id):
     if(current_user.get_id() != None and current_user.admin):
         up = Product.query.get(item_id)
-        return render_template("menu/update.html", item=up)
+        return render_template("menu/update.html", item=up, form=ProductForm())
     else:
         return redirect(url_for("menu_index"))
 
@@ -50,9 +50,14 @@ def menu_update_form(item_id):
 def menu_update(item_id):
     if(current_user.get_id() != None and current_user.admin):
         up = Product.query.get(item_id)
-        up.name = request.form.get("name")
-        up.ingredients = request.form.get("ingredients")
-        up.price = request.form.get("price")
+        
+        form = ProductForm(request.form)
+        if not form.validate():
+            return render_template("menu/update.html", form=form)
+            
+        up.name = form.name.data
+        up.ingredients = form.ingredients.data
+        up.price = float(form.price.data)
         
         db.session.commit()
     return redirect(url_for("menu_index"))

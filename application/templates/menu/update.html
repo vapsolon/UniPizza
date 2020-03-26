@@ -3,12 +3,24 @@
 {% block body %}
 <p><b>Updating item #{{item.id}}, {{item.name}}</b></p>
 <form method="POST" action="{{url_for('menu_update', item_id=item.id)}}">
-    <label for="name">Name</label>
-    <input type="text" name="name" value="{{item.name}}"/><br>
-    <label for="ingredients">Ingredients</label>
-    <input type="text" name="ingredients" value="{{item.ingredients}}"/><br>
-    <label for="price">Price</label>
-    <input type="text" name="price" value="{{item.price}}"/><br>
+    {{form.name.label}}
+    {{form.name(value=item.name)}}
+    {% for error in form.name.errors %}
+	    {{error}}
+	{% endfor %}
+    <br>
+    {{form.ingredients.label}}
+    {{form.ingredients(value=item.ingredients)}}
+    {% for error in form.ingredients.errors %}
+	    {{error}}
+	{% endfor %}
+    <br>
+    {{form.price.label}}
+    {{form.price(value=item.price)}}
+    {% for error in form.price.errors %}
+	    {{error}}
+	{% endfor %}
+    <br>
     <input type="submit" value="Update Menu Item"/>
 </form>
 {% endblock %}

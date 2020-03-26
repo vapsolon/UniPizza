@@ -15,3 +15,5 @@ Tällä hetkellä UniPizzan kautta on mahdollista tarkastella julkista menua ja 
 
 * Käyttäjänä haluan tilata pitsan kotiin helposti netistä
 * Käyttäjänä haluan voida tukea vakiopaikkaani kanta-asiakkaana ja saada tätä kautta myös pieniä etuja itselleni
+* Käyttäjänä haluan voida tarkastella tilaushistoriaani
+* Käyttäjänä haluan voida luoda oman käyttäjätilini ja täten helpottaa tilaamista entisestään
