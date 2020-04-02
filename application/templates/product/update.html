@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<p><b>Updating item #{{item.id}}, {{item.name}}</b></p>
+<form method="POST" action="{{url_for('product_update', item_id=item.id)}}">
+    <div class="form-group">
+        {{form.name.label}}
+        {{form.name(value=item.name, class_="form-control")}}
+        {% for error in form.name.errors %}
+            {{error}}
+        {% endfor %}
+    </div>
+    <div class="form-group">
+    {{form.price.label}}
+    {{form.price(value=item.price, class_="form-control")}}
+    {% for error in form.price.errors %}
+	    {{error}}
+	{% endfor %}
+    </div>
+    <div class="form-group">
+        {{form.ingredients.label}}
+        {% for ingredient in form.ingredients %}
+            <div class="form-check">
+                {{ingredient(class_="form-check-input")}}
+                {{ingredient.label(class_="form-check-label")}}
+            </div>
+        {% endfor %}
+    </div>
+    <input type="submit" class="btn btn-primary" value="Update Menu Item"/>
+</form>
+{% endblock %}

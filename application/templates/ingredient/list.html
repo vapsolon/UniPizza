@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Ingredient</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ingredient in ingredients %}
+                <tr>
+                    <td>{{ingredient.name}}</td>
+                    {% if current_user.admin %}
+                        <td>
+                            <a href="{{url_for('ingredient_update', item_id=ingredient.id)}}">Edit</a>
+                            <a href="{{url_for('ingredient_delete', item_id=ingredient.id)}}">Remove</a>
+                        </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

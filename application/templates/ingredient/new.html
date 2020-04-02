@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="POST" action="{{ url_for('ingredient_create') }}">
+    <div class="form-group">
+        {{form.name.label}}
+        {{form.name(class_="form-control")}}
+        {% for error in form.name.errors %}
+            {{error}}
+        {% endfor %}
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add a new ingredient"/>
+</form>
+{% endblock %}

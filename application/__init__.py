@@ -14,8 +14,13 @@ else:
 
 db = SQLAlchemy(app)
 
-from application.menu import models
+from application.product import models
+from application.product import views
+
 from application.menu import views
+
+from application.ingredient import models
+from application.ingredient import views
 
 from application.auth import models
 from application.auth import views
