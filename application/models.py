@@ -1,6 +1,6 @@
 from application import db
 
-product_ingredients = db.Table("ProductIngredient",
+product_ingredients = db.Table("productingredient",
     db.Column("product_id", db.Integer, db.ForeignKey("product.id")),
     db.Column("ingredient_id", db.Integer, db.ForeignKey("ingredient.id"))
 )
