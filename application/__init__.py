@@ -14,20 +14,24 @@ else:
 
 db = SQLAlchemy(app)
 
+import application.views
+
 from application.product import models
 from application.product import views
 
-from application.menu import views
-
 from application.ingredient import models
 from application.ingredient import views
+
+from application.cart import views
+
+from application.order import models
+from application.order import views
 
 from application.auth import models
 from application.auth import views
 
 from application.auth.models import User
-from os import urandom
-app.config["SECRET_KEY"] = urandom(32)
+app.config["SECRET_KEY"] = b'>\xb3\xfb\x0b\xa12\xc8\x99\xf1\x91\x85a\x08x\xc7\xcfRc\xe5\xe4\x0ch[\xb7\xe8\x1am\x17U\xead\xbf'
 
 from flask_login import LoginManager
 login_manager = LoginManager()

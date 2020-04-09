@@ -51,8 +51,9 @@ def product_update(item_id):
         up = Product.query.get(item_id)
         
         form = ProductForm(request.form)
+        form.ingredients.choices = [(i.id, i.name) for i in Ingredient.query.all()]
         if not form.validate():
-            return render_template("product/update.html", form=form)
+            return render_template("product/update.html", item=up, form=form)
             
         up.name = form.name.data
         up.price = float(form.price.data)
@@ -72,3 +73,7 @@ def product_delete(item_id):
         db.session.delete(p)
         db.session.commit()
     return redirect(url_for("menu_index"))
+    
+@app.route("/product/stats/", methods=["GET"])
+def product_stats():
+    return render_template("product/stats.html", stats = Product.sort_by_ingredient_count())

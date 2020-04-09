@@ -66,3 +66,7 @@ def ingredient_delete(item_id):
         db.session.commit()
         return redirect(url_for("ingredient_index"))
     return redirect(url_for("menu_index"))
+    
+@app.route("/ingredient/stats/", methods=["GET"])
+def ingredient_stats():
+    return render_template("ingredient/stats.html", stats = Ingredient.sort_by_most_products())

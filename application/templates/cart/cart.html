@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Ingredients</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if "cart" in session %}
+                    {% for item in items %}
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>
+                            {% for ingredient in item.ingredients %}
+                                {{ingredient.name}}<br>
+                            {% endfor %}
+                        </td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.amount}}</td>
+                        <td><a href="{{url_for('cart_remove', item_id=item.id)}}" class="btn btn-primary">Remove</a></td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        <p>Total Price: {{price}}</p>
+        <a href="{{url_for('order_send', price=price)}}" class="btn btn-primary">Confirm Order</a>
+    </div>
+{% endblock %}

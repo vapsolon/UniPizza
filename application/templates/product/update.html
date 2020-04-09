@@ -25,6 +25,9 @@
                 {{ingredient.label(class_="form-check-label")}}
             </div>
         {% endfor %}
+        {% for error in form.ingredients.errors %}
+            {{error}}
+        {% endfor %}
     </div>
     <input type="submit" class="btn btn-primary" value="Update Menu Item"/>
 </form>

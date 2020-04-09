@@ -1,5 +1,5 @@
 from application import app, db
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, session
 
 from application.product.models import Product
 

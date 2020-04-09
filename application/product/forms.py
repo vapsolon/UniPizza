@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, validators, widgets, SelectMultipleField
+from wtforms import StringField, DecimalField, validators, widgets, SelectMultipleField
 
 class IngredientsSelection(SelectMultipleField):
     widget = widgets.ListWidget()
@@ -9,8 +9,8 @@ class IngredientsSelection(SelectMultipleField):
         '''Disable pre-validation because it's a pain right now'''
 
 class ProductForm(FlaskForm):
-    name = StringField("Name", [validators.InputRequired()])
-    price = StringField("Price", [validators.InputRequired()])
+    name = StringField("Name", [validators.InputRequired(), validators.length(min=2,max=12)])
+    price = DecimalField("Price", [validators.InputRequired()])
     ingredients = IngredientsSelection("Ingredients", [validators.InputRequired()])
  
     class Meta:

@@ -21,7 +21,7 @@ def auth_login():
                                error = "No such email or password")
     
     if(bcrypt.check_password_hash(user.password, form.password.data)):
-        login_user(user)
+        login_user(user, remember=True)
         return redirect(url_for("menu_index"))
     else:
         return render_template("auth/login.html", form = form,
@@ -37,7 +37,7 @@ def auth_logout():
 def account_create():
     if(request.method == "GET"):
         if(current_user.get_id() == None):
-            return render_template("auth/new.html", form=CreateForm(), admin = False)
+            return render_template("auth/new.html", form=CreateForm(), admin = True)
         elif(current_user.admin == True):
             return render_template("auth/new.html", form=CreateForm(), admin = True)
         else:
@@ -46,6 +46,10 @@ def account_create():
     form = CreateForm(request.form)
     admin = form.admin.data
     if not form.validate():
+        return render_template("auth/new.html", form=form, admin=admin)
+        
+    if User.query.filter_by(email=form.email.data).first():
+        form.email.errors.append("Email is already in use")
         return render_template("auth/new.html", form=form, admin=admin)
         
     hash = bcrypt.generate_password_hash(form.password.data).decode("utf-8")

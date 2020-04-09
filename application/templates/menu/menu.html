@@ -20,6 +20,7 @@
                         {% endfor %}
                     </td>
                     <td>{{item.price}}</td>
+                    <td><a href="{{url_for('cart_add', item_id=item.id)}}" class="btn btn-primary">Add to Cart</a></td>
                     {% if current_user.admin %}
                         <td>
                             <a href="{{url_for('product_update', item_id=item.id)}}">Edit</a>
