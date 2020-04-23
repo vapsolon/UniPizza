@@ -40,7 +40,7 @@ Tilaaminen alkaa ruokalistasta. Listan tuotteita voi lisätä ostoskoriin, joka 
 
 Ostoskorilistaukseen pääsee oikean yläkulman **Cart**-linkistä. Tässä näkymässä koria on vielä mahdollista tarkastella ja muokata. Listan tuotteiden **Remove**-nappi poistaa yhden yksikön kyseistä tuotetta korista.
 
-Tilauksen voi vahvistaa **Confirm Order**-napilla, jolloin tilaus tallennetaan saman tien tietokantaan ja käyttäjä ohjataan varmistussivulle. Tilaukseen ei vielä tällä hetkellä liity käyttäjää, joten tilauksen voi tehdä kirjautumatta.
+Tilauksen voi vahvistaa **Confirm Order**-napilla, jolloin tilaus tallennetaan saman tien tietokantaan ja käyttäjä ohjataan varmistussivulle. Jos käyttäjä on kirjautunut sovellukseen, tilaukseen liitetään viitteenä tieto tilanneesta käyttäjästä. Myös tunnistautumaton tilaaminen on mahdollista, tosin tällöin tilaus jää toimittamatta sillä minkäänlaisia yhteystietoja ei vielä kysytä.
 
 ### Listaaminen
 

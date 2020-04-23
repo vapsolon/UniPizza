@@ -10,11 +10,12 @@
 ## Toteutettu toiminnallisuus
 
 * Mahdollisuus käyttäjän luomiseen. Käyttäjä voi olla joko admin (oikeudet tuotteiden, täytteiden ja käyttäjien lisäämiseen, oikeudet kaiken tiedon tarkasteluun jne) tai tavallinen käyttäjä (oikeudet ruokalistan tarkasteluun ja tilaamiseen)
-* Tilaustoiminnallisuus. Käyttäjä voi lisätä listalta tuotteita ostoskoriinsa ja lähettää tilauksen. Tällä hetkellä tilaukset eivät ole käyttäjäsidonnaisia ja ne vain todetaan saapuneiksi.
+* Tilaustoiminnallisuus. Käyttäjä voi lisätä listalta tuotteita ostoskoriinsa ja lähettää tilauksen. Jos käyttäjä on kirjautunut palveluun, tallennetaan tilaukseen myös viite tilanneeseen käyttäjään. Myös kirjautumaton tilaaminen on mahdollista, tällöin tilauksen käyttäjäviite jätetään vain tyhjäksi. Kirjautumattomalta käyttäjältä ei tosin vielä kysytä mitään tietoja, joten tilaus jää toimittamatta.
 * Täytteiden erottaminen omiksi olioikseen. Täytteet luodaan erikseen, ja tuotetta luodessa siihen voi lisätä täytteitä listalta ruksimalla.
 
 * Tuotteiden, täytteiden ja käyttäjien luominen admin-puolella.
 * Tuotteiden ja täytteiden muokkaaminen ja poistaminen.
+* Tuotteiden, täytteiden, käyttäjien ja tilauksien tarkasteleminen ylläpitäjille.
 
 ## User Storyt
 
