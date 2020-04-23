@@ -31,6 +31,8 @@
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{{url_for('product_stats')}}">Statistics</a>
+        {% if current_user.admin %}
+            <a href="{{url_for('product_stats')}}">Statistics</a>
+        {% endif %}
     </div>
 {% endblock %}
