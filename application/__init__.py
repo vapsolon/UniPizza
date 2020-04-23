@@ -30,6 +30,8 @@ from application.order import views
 from application.auth import models
 from application.auth import views
 
+from application.user import views
+
 from application.auth.models import User
 app.config["SECRET_KEY"] = b'>\xb3\xfb\x0b\xa12\xc8\x99\xf1\x91\x85a\x08x\xc7\xcfRc\xe5\xe4\x0ch[\xb7\xe8\x1am\x17U\xead\xbf'
 

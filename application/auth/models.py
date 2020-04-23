@@ -11,6 +11,7 @@ class User(Base):
     address = db.Column(db.String(144), nullable=False)
     phone = db.Column(db.String(144), nullable=False)
     admin = db.Column(db.Boolean, nullable=False)
+    orders = db.relationship("Order", back_populates="user")
 
     def __init__(self, name, email, password, address, phone, admin):
         self.name = name

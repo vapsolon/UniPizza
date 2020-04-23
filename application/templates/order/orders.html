@@ -6,6 +6,7 @@
             <thead>
                 <tr>
                     <th scope="col">Order #</th>
+                    <th scope="col">User</th>
                     <th scope="col">Timestamp</th>
                     <th scope="col">Products</th>
                     <th scope="col">Total Price</th>
@@ -15,6 +16,13 @@
                 {% for order in orders %}
                 <tr>
                     <td>{{order.id}}</td>
+                    <td>
+                        {% if order.user == None %}
+                            Unregistered User
+                        {% else %}
+                            <a href="{{url_for('specific_user', user_id=order.user.id)}}">{{order.user.name}}</a>
+                        {% endif %}
+                    </td>
                     <td>{{order.date}}</td>
                     <td>
                         {% for product in order.products %}

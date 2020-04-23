@@ -9,7 +9,7 @@ class IngredientsSelection(SelectMultipleField):
         '''Disable pre-validation because it's a pain right now'''
 
 class ProductForm(FlaskForm):
-    name = StringField("Name", [validators.InputRequired(), validators.length(min=2,max=12)])
+    name = StringField("Name", [validators.InputRequired(), validators.length(min=2,max=100)])
     price = DecimalField("Price", [validators.InputRequired()])
     ingredients = IngredientsSelection("Ingredients", [validators.InputRequired()])
  
