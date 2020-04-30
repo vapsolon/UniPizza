@@ -37,7 +37,7 @@ def auth_logout():
 def account_create():
     if(request.method == "GET"):
         if(current_user.get_id() == None):
-            return render_template("auth/new.html", form=CreateForm(), admin = True)
+            return render_template("auth/new.html", form=CreateForm(), admin = False)
         elif(current_user.admin == True):
             return render_template("auth/new.html", form=CreateForm(), admin = True)
         else:
