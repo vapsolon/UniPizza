@@ -17,9 +17,11 @@ Admin-puolella toiminnallisuus on paljon laajempi. Ylläpitäjät voivat lisät�
 
 [Käyttöohje](https://github.com/vapsolon/UniPizza/blob/master/docut/Käyttöohje.md)
 
-[Tietokantakaavio](https://vapsolon.github.io/UniPizza/docut/Tietokantakaavio.png)
+[Tietokantarakenne](https://vapsolon.github.io/UniPizza/docut/Tietokantarakenne.md)
 
 [Käyttötapaukset](https://github.com/vapsolon/UniPizza/blob/master/docut/K%C3%A4ytt%C3%B6tapaukset.md)
+
+[Loppupohdinta](https://github.com/vapsolon/UniPizza/blob/master/docut/Loppupohdinta.md) - Sisältää rajoitteet ja puutteet
 
 Testikäyttäjätiedot:
 
