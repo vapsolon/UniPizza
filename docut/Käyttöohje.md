@@ -6,11 +6,16 @@ Sovelluksessa on kahdenlaisia käyttäjiä. Tavallisilla käyttäjillä sovelluk
 
 ## Käyttäjät
 
+### Lisääminen
 Uuden käyttäjän luominen tapahtuu joko oikeasta yläkulmasta **Create an Account**-linkin kautta (kirjautumaton tila) tai navigaatiopalkin **Create an Account**-linkin kautta (kirjautunut&admin -tila). Kaikki lomakkeen kentät paitsi mahdollisesti näkyvissä oleva **Admin**-checkbox ovat vaadittuja, joskin sähköpostin tai puhelinnumeron ei tarvitse olla "oikeassa muodossa", eli lomaketta ei ole validoitu kovin tarkkaan.
 
 **Admin**-checkbox antaa käyttäjälle ylläpitäjän oikeudet jos se on valittuna käyttäjää luodessa. Checkbox on näkyvissä ainoastaan muille admin-käyttäjille.
 
 Kirjautuminen ja uloskirjautuminen tapahtuvat samoin oikeasta yläkulmasta linkkien **Log In** ja **Log Out** kautta.
+
+### Listaaminen
+
+Admin-käyttäjien navigaatiopalkissa on myös **Users**-linkki, jonka kautta pääsee tarkastelemaan listaa kaikista tietokannassa olevista käyttäjistä.
 
 ## Tuotteet ja Täytteet
 
@@ -40,7 +45,9 @@ Tilaaminen alkaa ruokalistasta. Listan tuotteita voi lisätä ostoskoriin, joka 
 
 Ostoskorilistaukseen pääsee oikean yläkulman **Cart**-linkistä. Tässä näkymässä koria on vielä mahdollista tarkastella ja muokata. Listan tuotteiden **Remove**-nappi poistaa yhden yksikön kyseistä tuotetta korista.
 
-Tilauksen voi vahvistaa **Confirm Order**-napilla, jolloin tilaus tallennetaan saman tien tietokantaan ja käyttäjä ohjataan varmistussivulle. Jos käyttäjä on kirjautunut sovellukseen, tilaukseen liitetään viitteenä tieto tilanneesta käyttäjästä. Myös tunnistautumaton tilaaminen on mahdollista, tosin tällöin tilaus jää toimittamatta sillä minkäänlaisia yhteystietoja ei vielä kysytä.
+Jos asiakas ei ole kirjatunut käyttäjätilille, ostoskorissa näytetään korin sisällön lisäksi vielä yhteystietolomake, jonka kaikki kentät ovat vaadittuja. 
+
+Tilauksen voi vahvistaa **Confirm Order**-napilla, jolloin tilaus tallennetaan saman tien tietokantaan ja käyttäjä ohjataan varmistussivulle. Jos käyttäjä on kirjautunut sovellukseen, tilaukseen liitetään viitteenä tieto tilanneesta käyttäjästä. Myös tunnistautumaton tilaaminen on mahdollista, tällöin tietokantaan asiakkaaksi asetetaan **"Unregistered User"**, eli anonyymi tilaaminen on siis mahdollista eikä asiakkaan yhteystietoja säilytetä.
 
 ### Listaaminen
 

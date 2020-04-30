@@ -7,7 +7,11 @@ from application.ingredient.forms import IngredientForm
 @app.route("/ingredient/", methods=["GET"])
 @login_required
 def ingredient_index():
-    return render_template("ingredient/list.html", ingredients = Ingredient.query.all())
+    if(current_user.admin == True):
+        return render_template("ingredient/list.html", ingredients = Ingredient.query.all())
+    else:
+        return redirect(url_for("menu_index"))
+        
     
 @app.route("/ingredient/new", methods=["GET", "POST"])
 @login_required
@@ -68,5 +72,9 @@ def ingredient_delete(item_id):
     return redirect(url_for("menu_index"))
     
 @app.route("/ingredient/stats/", methods=["GET"])
+@login_required
 def ingredient_stats():
-    return render_template("ingredient/stats.html", stats = Ingredient.sort_by_most_products())
+    if(current_user.admin == True):
+        return render_template("ingredient/stats.html", stats = Ingredient.sort_by_most_products())
+    else:
+        return redirect(url_for("menu_index"))

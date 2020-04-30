@@ -1,5 +1,7 @@
 from application import app
 from flask import render_template, request, redirect, url_for, session
+from flask_login import current_user
+from application.cart.forms import UserInfoForm
 from application.product.models import Product
 
 @app.route("/cart/", methods=["GET"])
@@ -13,7 +15,11 @@ def cart_index():
                 up.amount = amount
                 items.append(up)
                 price += amount * up.price
-        return render_template("cart/cart.html", items=items, price=price)
+        if not(current_user.is_authenticated):
+            form = UserInfoForm(visible="yes")
+        else:
+            form = UserInfoForm(visible="no")
+        return render_template("cart/cart.html", items=items, price=price, form=form)
     return redirect(url_for("menu_index"))
     
 @app.route("/cart/<item_id>", methods=["GET"])

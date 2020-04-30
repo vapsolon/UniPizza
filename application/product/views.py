@@ -6,8 +6,9 @@ from application.product.forms import ProductForm
 from application.ingredient.models import Ingredient
 
 @app.route("/product/new")
+@login_required
 def product_form():
-    if(current_user.get_id() != None and current_user.admin):
+    if(current_user.admin == True):
         form = ProductForm()
         form.ingredients.choices = [(i.id, i.name) for i in Ingredient.query.all()]
         form.ingredients.data = [i.id for i in Ingredient.query.all()]
@@ -16,8 +17,9 @@ def product_form():
         return redirect(url_for("menu_index"))
 
 @app.route("/product/", methods=["POST"])
+@login_required
 def product_add():
-    if(current_user.get_id() != None and current_user.admin):
+    if(current_user.admin == True):
         form = ProductForm(request.form)
         form.ingredients.choices = [(i.id, i.name) for i in Ingredient.query.all()]
         
@@ -35,8 +37,9 @@ def product_add():
     return redirect(url_for("menu_index"))
         
 @app.route("/product/<item_id>/", methods=["GET"])
+@login_required
 def product_update_form(item_id):
-    if(current_user.get_id() != None and current_user.admin):
+    if(current_user.admin == True):
         up = Product.query.get(item_id)
         form = ProductForm()
         form.ingredients.choices = [(i.id, i.name) for i in Ingredient.query.all()]
@@ -46,8 +49,9 @@ def product_update_form(item_id):
         return redirect(url_for("menu_index"))
 
 @app.route("/product/<item_id>/", methods=["POST"])
+@login_required
 def product_update(item_id):
-    if(current_user.get_id() != None and current_user.admin):
+    if(current_user.admin == True):
         up = Product.query.get(item_id)
         
         form = ProductForm(request.form)
@@ -66,8 +70,9 @@ def product_update(item_id):
     return redirect(url_for("menu_index"))
     
 @app.route("/product/<item_id>/delete", methods=["GET"])
+@login_required
 def product_delete(item_id):
-    if(current_user.get_id() != None and current_user.admin):
+    if(current_user.admin == True):
         p = Product.query.get(item_id)
         
         db.session.delete(p)

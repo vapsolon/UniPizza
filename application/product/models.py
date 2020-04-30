@@ -30,3 +30,4 @@ class Product(Base):
         for row in response:
             res.append({"id":row[0], "name":row[1], "count":row[2]})
         return res
+    

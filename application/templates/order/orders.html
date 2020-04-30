@@ -20,7 +20,11 @@
                         {% if order.user == None %}
                             Unregistered User
                         {% else %}
-                            <a href="{{url_for('specific_user', user_id=order.user.id)}}">{{order.user.name}}</a>
+                            {% if current_user.admin %}
+                                <a href="{{url_for('specific_user', user_id=order.user.id)}}">{{order.user.name}}</a>
+                            {% else %}
+                                {{order.user.name}}
+                            {% endif %}
                         {% endif %}
                     </td>
                     <td>{{order.date}}</td>

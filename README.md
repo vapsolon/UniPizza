@@ -3,13 +3,13 @@ Tietokantasovellus 2020 -harjoitustyö
 
 ## Aihekuvaus
 
-Tarkoituksena on luoda nettitilaustoiminnallisuus kuvitteelliselle pizzapalvelulle. Käyttäjän on mahdollista kirjautua sivulle jolloin hänen tietonsa haetaan automaattisesti tietokannasta, ja samoin käyttäjä voi halutessaan rekisteröityä toistotilaamisen helpottamiseksi ja mahdollisen kanta-asiakasohjelman etuja hyödyntääkseen. Tilaamisen täytyy kuitenkin onnistua myös kirjautumatta.
+UniPizza on nettitilauspalvelu kuvitteelliselle pizzerialle.
 
-Ensin käyttäjä valitsee haluamansa tuotteet verkkokaupasta ja siirtyy sitten tilaamaan. Tilausta voi muokata aina tilauksen vahvistamiseen ja ravintolalle lähettämiseen asti, mutta heti vahvistamisen jälkeen tilaus on lukittu ja tallennettu tietokantaan.
+Sovelluksen toiminnallisuus on jaettu kahteen osaan, julkisesti kaikille näkyvään käyttöliittymään sekä ylläpitäjille rajattuun admin-puoleen.
 
-Jokainen tuote on tallennettu erikseen tietokantaan, ja jokaisen tuotteen täytteet on eritelty vielä omiksi tietokantaolioikseen esimerkiksi lisätäytteiden tukemisen helpottamiseksi. Tilatessa kysytään ja varmistetaan käyttäjän yhteystiedot, tilauksen sisältö ja toimitustapa. Jokainen tilaus tallennetaan erikseen tietokantaan.
+Sovelluksen julkisessa osassa käyttäjän on mahdollista tarkastella palvelun ruokalistaa, lisätä listalta tuotteita ostoskoriin ja lähettää lopulta ostoskorin kautta tilaus itse ravintolaan. Lisäksi käyttäjillä on mahdollisuus käyttäjätunnusten luomiseen, jolloin tilauksien yhteyteen tallentuu myös tieto tilauksen tehneestä käyttäjästä, ja heille avautuu mahdollisuus tarkastella omaa tilaushistoriaansa.
 
-Admin-puolella ainakin täytteiden ja tuotteiden poistaminen ja lisääminen tulisi onnitua. Tilaushistorian tarkastelemisen pitäisi myös olla mahdollista. Lisäksi jonkinlainen järjestelmä kanta-asiakaspisteiden kertymiseen ja käyttämiseen voitaisiin toteuttaa perustoiminnallisuuden päälle.
+Admin-puolella toiminnallisuus on paljon laajempi. Ylläpitäjät voivat lisätä sovelluksen tietokantaan täytteitä ja edelleen näistä täytteistä koostuvia tuotteita. Samoin ylläpitäjät voivat luoda käyttäjätilejä ja tarvittaessa antaa näille käyttäjille admin-oikeudet. Lisäksi ylläpitäjät voivat tarkastella erilaisia tilastoja, kuten rekisteröityneiden käyttäjien ja varmistettujen tilausten listoja.
 
 ## Resurssit
 
