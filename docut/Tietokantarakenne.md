@@ -42,7 +42,7 @@ CREATE TABLE productingredient(
 	FOREIGN KEY(ingredient_id) REFERENCES ingredient (id)
 )
 
-CREATE TABLE "order"(
+CREATE TABLE order(
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
 	date_modified DATETIME, 
@@ -61,7 +61,7 @@ CREATE TABLE order_product(
 	product_id INTEGER, 
 	amount INTEGER, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(order_id) REFERENCES "order" (id), 
+	FOREIGN KEY(order_id) REFERENCES order (id), 
 	FOREIGN KEY(product_id) REFERENCES product (id)
 )
 ```
